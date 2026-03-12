@@ -1,0 +1,172 @@
+// 1. Variables (Agar mudah mengubah warna/ukuran nantinya)
+$primary-purple: #5000ca;
+$accent-purple: #8c52ff;
+$bg-dark: #151515;
+$bg-card-hover: #1a1a1a;
+$border-color: #2a2a2a;
+$text-white: #ffffff;
+$text-gray: #a0a0a0;
+
+// 2. Main Container
+.projects-container {
+  padding: 5rem 10%; // Mengambil padding dari kode lama agar proporsional
+  max-width: 1400px;
+  margin: 0 auto;
+  color: $text-white;
+  display: flex;
+  flex-direction: column;
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+
+  // 3. Grid System
+  .projects-grid {
+    display: grid;
+    // Menggunakan auto-fit agar otomatis menyesuaikan jumlah kolom
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  // 4. Project Card
+  .project-card {
+    background: $bg-dark;
+    border: 1px solid $border-color;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: $primary-purple;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      background: $bg-card-hover;
+
+      .project-image-wrapper img {
+        transform: scale(1.08); // Efek zoom yang lebih halus
+      }
+      
+      h2 {
+        text-decoration: underline; // Dari kode lama kamu
+        color: $accent-purple;
+      }
+    }
+
+    // 5. Image Wrapper
+    .project-image-wrapper {
+      width: 100%;
+      height: 240px; // Tinggi seragam
+      overflow: hidden;
+      background: #000;
+      border-bottom: 1px solid $border-color;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Penting: Menyeragamkan ukuran gambar Web & HP
+        transition: transform 0.5s ease-in-out;
+      }
+    }
+
+    // 6. Project Info
+    .project-info {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: $text-white;
+        font-weight: 700;
+        transition: color 0.3s ease;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: $text-gray;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        flex-grow: 1; // Mendorong footer ke bawah
+      }
+
+      .tech-stack {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+        padding: 0.5rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+        strong {
+          color: $text-white;
+        }
+
+        span {
+          color: $accent-purple;
+          font-family: 'Courier New', Courier, monospace;
+          font-weight: 600;
+        }
+      }
+
+      // 7. Footer (Button)
+      .project-footer {
+        margin-top: auto;
+
+        .btn-view {
+          display: block;
+          width: 100%;
+          padding: 0.9rem;
+          text-align: center;
+          background: transparent;
+          color: $text-white;
+          border: 1px solid $text-white;
+          text-decoration: none;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 0.9rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: $text-white;
+            color: #000;
+            transform: scale(1.02);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 8. Responsivitas (Media Queries Terpadu)
+@media (max-width: 850px) {
+  .projects-container {
+    padding: 3rem 5%;
+
+    .projects-grid {
+      grid-template-columns: 1fr; // Paksa 1 kolom di tablet/mobile
+      gap: 2rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .project-image-wrapper {
+    height: 200px; // Gambar sedikit lebih pendek di HP layar kecil
+  }
+  
+  .project-info {
+    padding: 1.5rem;
+  }
+}
