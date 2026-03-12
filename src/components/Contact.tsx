@@ -32,51 +32,49 @@ function Contact() {
         message: message,
       };
 
-      /* 
-         CATATAN: Ganti 'YOUR_TEMPLATE_ID' dengan ID dari dashboard EmailJS kamu 
-      */
       emailjs.send(
         'service_phixdjp', 
-        'template_4vylspf', // <--- GANTI INI DENGAN TEMPLATE ID KAMU
+        'template_4vylspf', 
         templateParams, 
         'VSo0XSq42P0Iij5NT'
-      ) .then((response) => {
-    // POP-UP KEREN
-    Swal.fire({
-      title: 'Success!',
-      text: 'Pesan kamu sudah Zahwa terima. Terima kasih!',
-      icon: 'success',
-      confirmButtonColor: '#5000ca', // Samakan dengan warna tema kamu
-      timer: 3000 // Otomatis tutup dalam 3 detik
-    });
+      ).then((response) => {
+        // POP-UP BERHASIL
+        Swal.fire({
+          title: 'Success!',
+          text: 'Pesan kamu sudah Zahwa terima. Terima kasih!',
+          icon: 'success',
+          confirmButtonColor: '#5000ca',
+          timer: 3000
+        });
 
-    setName('');
-    setEmail('');
-    setMessage('');
-  }, (error) => {
-    Swal.fire({
-      title: 'Oops...',
-      text: 'Gagal mengirim pesan, silakan coba lagi nanti.',
-      icon: 'error',
-      confirmButtonColor: '#5000ca'
-    });
-  });
+        setName('');
+        setEmail('');
+        setMessage('');
+      }, (error) => {
+        // POP-UP GAGAL
+        Swal.fire({
+          title: 'Oops...',
+          text: 'Gagal mengirim pesan, silakan coba lagi nanti.',
+          icon: 'error',
+          confirmButtonColor: '#5000ca'
+        });
+        console.log('FAILED...', error);
+      });
     }
   };
 
-  // Objek styling untuk memaksa warna input
   const inputStyle = {
     backgroundColor: 'white',
     borderRadius: '8px',
     '& .MuiInputBase-input': {
-      color: 'black !important', // Paksa teks hitam
-      WebkitTextFillColor: 'black !important', // Paksa teks hitam di Chrome
+      color: 'black !important',
+      WebkitTextFillColor: 'black !important',
     },
     '& .MuiInputLabel-root': {
-      color: '#666', // Warna label sebelum diklik
+      color: '#666',
     },
     '& .MuiInputLabel-root.Mui-focused': {
-      color: '#5000ca', // Warna label saat diklik (ungu)
+      color: '#5000ca',
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
