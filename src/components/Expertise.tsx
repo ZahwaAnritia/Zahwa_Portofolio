@@ -1,8 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faNodeJs, faAndroid, faJava } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faNodeJs, faAndroid } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const labelsFirst = [
     "React",
@@ -40,7 +41,7 @@ function Expertise() {
 
                 {/* 1. Frontend */}
                 <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
+                    <FontAwesomeIcon icon={faReact as IconProp} size="3x"/>
                     <h3>Frontend Development</h3>
                     <p>
                         Membangun antarmuka web yang modern dan responsif menggunakan 
@@ -58,7 +59,8 @@ function Expertise() {
 
                 {/* 2. Backend (Ditambahkan Spring Boot) */}
                 <div className="skill">
-                    <FontAwesomeIcon icon={faNodeJs} size="3x"/>
+                    <FontAwesomeIcon icon={faNodeJs as any} size="3x"/>
+
                     <h3>Backend Development</h3>
                     <p>
                         Berpengalaman mengembangkan sisi server menggunakan 
@@ -76,7 +78,7 @@ function Expertise() {
 
                 {/* 3. Database & Mobile */}
                 <div className="skill">
-                    <FontAwesomeIcon icon={faAndroid} size="3x"/>
+                    <FontAwesomeIcon icon={faAndroid as any} size="3x"/>
                     <h3>Mobile & Database</h3>
                     <p>
                         Mengembangkan aplikasi <b>Android Native (Kotlin)</b> dengan implementasi 
