@@ -1,15 +1,13 @@
 import React from "react";
-import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact } from '@fortawesome/free-brands-svg-icons';
-import { faNodeJs } from '@fortawesome/free-brands-svg-icons';
-import { faAndroid } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faNodeJs, faAndroid, faJava } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
     "React",
     "JavaScript",
+    "TypeScript",
     "HTML5",
     "CSS3"
 ];
@@ -17,32 +15,37 @@ const labelsFirst = [
 const labelsSecond = [
     "Node.js",
     "Express.js",
+    "Spring Boot", // Tambahkan ini
+    "Java",        // Tambahkan ini
     "REST API",
-    "JWT Authentication"
+    "JWT"
 ];
 
 const labelsThird = [
+    "Kotlin",
     "MySQL",
-    "Sequelize",
     "SQLite",
-    "Room Database"
+    "Room Database",
+    "Sequelize",
+    "Maven"        // Tambahkan ini
 ];
 
 function Expertise() {
     return (
     <div className="container" id="expertise">
         <div className="skills-container">
-            <h1>Skills</h1>
+            <h1>Skills & Expertise</h1>
 
             <div className="skills-grid">
 
+                {/* 1. Frontend */}
                 <div className="skill">
                     <FontAwesomeIcon icon={faReact} size="3x"/>
                     <h3>Frontend Development</h3>
                     <p>
-                        Mengembangkan antarmuka web menggunakan React, HTML, CSS,
-                        dan JavaScript untuk membuat aplikasi yang responsif
-                        dan mudah digunakan.
+                        Membangun antarmuka web yang modern dan responsif menggunakan 
+                        <b> React.js</b>. Fokus pada pengalaman pengguna (UX) yang intuitif 
+                        serta integrasi API yang efisien.
                     </p>
 
                     <div className="flex-chips">
@@ -53,13 +56,14 @@ function Expertise() {
                     </div>
                 </div>
 
-
+                {/* 2. Backend (Ditambahkan Spring Boot) */}
                 <div className="skill">
                     <FontAwesomeIcon icon={faNodeJs} size="3x"/>
                     <h3>Backend Development</h3>
                     <p>
-                        Mengembangkan RESTful API menggunakan Node.js dan Express.js,
-                        serta mengimplementasikan sistem autentikasi menggunakan JWT.
+                        Berpengalaman mengembangkan sisi server menggunakan 
+                        <b> Node.js</b> dan <b>Java Spring Boot</b>. Mahir dalam merancang 
+                        arsitektur RESTful API, Service-Repository, dan sistem autentikasi JWT.
                     </p>
 
                     <div className="flex-chips">
@@ -70,14 +74,14 @@ function Expertise() {
                     </div>
                 </div>
 
-
+                {/* 3. Database & Mobile */}
                 <div className="skill">
                     <FontAwesomeIcon icon={faAndroid} size="3x"/>
-                    <h3>Database & Mobile Development</h3>
+                    <h3>Mobile & Database</h3>
                     <p>
-                        Mengelola database menggunakan MySQL dan SQLite serta memiliki
-                        pengalaman membangun aplikasi Android menggunakan Kotlin
-                        dengan Room Database.
+                        Mengembangkan aplikasi <b>Android Native (Kotlin)</b> dengan implementasi 
+                        Clean Architecture (MVVM) serta pengelolaan database relasional 
+                        menggunakan MySQL dan SQLite.
                     </p>
 
                     <div className="flex-chips">

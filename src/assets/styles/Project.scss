@@ -62,16 +62,19 @@ $text-gray: #a0a0a0;
 
     // 5. Image Wrapper
     .project-image-wrapper {
-      width: 100%;
-      height: 240px; // Tinggi seragam
-      overflow: hidden;
-      background: #000;
-      border-bottom: 1px solid $border-color;
+       width: 100%;
+    height: 280px; // Kita tambah tingginya sedikit agar lebih lega
+    overflow: hidden;
+    background: #111111; // Background gelap supaya bagian kosong tidak mencolok
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; // Memberi sedikit ruang agar gambar tidak nempel ke pinggir card
 
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover; // Penting: Menyeragamkan ukuran gambar Web & HP
+        object-fit: contain; // Penting: Menyeragamkan ukuran gambar Web & HP
         transition: transform 0.5s ease-in-out;
       }
     }
