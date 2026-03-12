@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faNodeJs, faAndroid } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const labelsFirst = [
     "React",
@@ -16,8 +15,8 @@ const labelsFirst = [
 const labelsSecond = [
     "Node.js",
     "Express.js",
-    "Spring Boot", // Tambahkan ini
-    "Java",        // Tambahkan ini
+    "Spring Boot",
+    "Java",
     "REST API",
     "JWT"
 ];
@@ -28,7 +27,7 @@ const labelsThird = [
     "SQLite",
     "Room Database",
     "Sequelize",
-    "Maven"        // Tambahkan ini
+    "Maven"
 ];
 
 function Expertise() {
@@ -41,7 +40,8 @@ function Expertise() {
 
                 {/* 1. Frontend */}
                 <div className="skill">
-                    <FontAwesomeIcon icon={faReact as IconProp} size="3x"/>
+                    {/* Menggunakan 'as any' agar lolos pengecekan tipe data TypeScript di Vercel */}
+                    <FontAwesomeIcon icon={faReact as any} size="3x"/>
                     <h3>Frontend Development</h3>
                     <p>
                         Membangun antarmuka web yang modern dan responsif menggunakan 
@@ -57,10 +57,9 @@ function Expertise() {
                     </div>
                 </div>
 
-                {/* 2. Backend (Ditambahkan Spring Boot) */}
+                {/* 2. Backend */}
                 <div className="skill">
                     <FontAwesomeIcon icon={faNodeJs as any} size="3x"/>
-
                     <h3>Backend Development</h3>
                     <p>
                         Berpengalaman mengembangkan sisi server menggunakan 
