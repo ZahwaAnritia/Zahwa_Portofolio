@@ -24,8 +24,8 @@ function Timeline() {
             <h3 className="vertical-timeline-element-title">Teknologi Informasi Student</h3>
             <h4 className="vertical-timeline-element-subtitle">Universitas Muhammadiyah Yogyakarta</h4>
             <p>
-              Fokus pada Full-stack Web Development dan Mobile Development.
-            </p>
+  Fokus pada pengembangan <b>Full-stack Web (React, Node.js, Spring Boot)</b> dan <b>Android Native (Kotlin)</b>. Aktif membangun berbagai solusi digital melalui proyek mandiri dan akademik.
+</p>
           </VerticalTimelineElement>
 
           {/* --- 2. Proyek: KTP Management System (Maret 2026) --- */}
@@ -92,7 +92,7 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faGraduationCap} />}
           >
             <h3 className="vertical-timeline-element-title">High School Graduate</h3>
-            <h4 className="vertical-timeline-element-subtitle">SMAN 1 Mataram, NTB</h4>
+            <h4 className="vertical-timeline-element-subtitle">SMAN 1 SUMBAWA BESAR, NTB</h4>
             <p>
               Jurusan MIPA. Fokus pada pengembangan logika dasar dan kemampuan analitis.
             </p>
