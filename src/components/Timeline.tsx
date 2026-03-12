@@ -24,7 +24,7 @@ function Timeline() {
             <h3 className="vertical-timeline-element-title">Teknologi Informasi Student</h3>
             <h4 className="vertical-timeline-element-subtitle">Universitas Muhammadiyah Yogyakarta</h4>
             <p>
-              Fokus pada Full-stack Web Development dan Mobile Development. Mempertahankan IPK 3.7/4.0.
+              Fokus pada Full-stack Web Development dan Mobile Development.
             </p>
           </VerticalTimelineElement>
 
